@@ -33,6 +33,11 @@ func SkipFileInfo(l *logrus.Logger, curFile os.DirEntry, fileFullPath string) bo
 		return true
 	}
 
+	// PATCH: .strm 文件本质是文本播放列表，天生小于 1000 字节，不能按小文件规则跳过
+	if strings.EqualFold(filepath.Ext(curFile.Name()), ".strm") {
+		return false
+	}
+
 	// 软链接问题 #558
 	if fi.Size() < 1000 {
 
