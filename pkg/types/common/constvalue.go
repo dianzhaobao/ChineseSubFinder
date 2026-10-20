@@ -30,6 +30,8 @@ const (
 	VideoExtRmvb = ".rmvb"
 	VideoExtIso  = ".iso"
 	VideoExtM2ts = ".m2ts"
+	// PATCH: strm 播放列表文件（onestrm / Emby strm 库），默认纳入视频扩展名
+	VideoExtStrm = ".strm"
 )
 
 const (
