@@ -1,0 +1,6 @@
+# CSF-strm 补丁版镜像
+# 基于官方镜像，只替换后端二进制（前端已通过 go:embed 打进二进制内）。
+# 补丁内容见 PATCHES.md。
+FROM allanpk716/chinesesubfinder:latest
+COPY chinesesubfinder /usr/local/bin/chinesesubfinder
+RUN chmod +x /usr/local/bin/chinesesubfinder
